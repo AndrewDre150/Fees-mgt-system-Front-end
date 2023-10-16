@@ -1,0 +1,48 @@
+const [data, setData] = useState([]);
+  const [count, setCount] = useState(0);
+  
+  const handleDelete = (e) =>{
+    let newData = data.filter((data)=> data.id !== e);
+    console.log(newData);
+    setData(newData);
+  }
+
+  const handleAddBlog = () => {
+    let form = document.getElementById("form");
+    form.onsubmit = function(event){
+      event.preventDefault();
+      let formData = new FormData(form);
+      let blog = {
+        "id":formData.get("id"),
+        "owner":formData.get("owner"),
+        "title":formData.get("title"),
+        "content":formData.get("content")
+      };
+      data.push(blog);
+      setData(data);
+      setCount(count+1);
+      console.log(data);
+    }
+  }
+
+  const AddFormBlog = () =>{
+    return(
+      <div>
+        <form id="form">
+          <input type="number" name="id" placeholder="id" />
+          <input type="text" name="owner" placeholder="owner" />
+          <input type="text" name="title" placeholder="title" />
+          <textarea name="content" placeholder="blog content"></textarea>
+          <button onClick={handleAddBlog}>Add blog</button>
+        </form>
+      </div>
+    )
+  }
+
+  useEffect(()=>{
+    console.log("i have finished loading");
+  },[count]);
+
+
+<Blogs blogs = {data} title = "makerere blogs" handleDelete = {handleDelete}/>
+<Blogs blogs = {data.filter((data) => data.owner === 'david')} title = "davids blogs" handleDelete = {handleDelete}/>

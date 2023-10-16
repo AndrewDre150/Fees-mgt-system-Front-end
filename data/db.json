@@ -1,0 +1,49 @@
+{
+    "blogs":[
+        {
+            "id":1,
+            "title":"hello dave",
+            "author":"dave"
+        },
+        {
+            "id":2,
+            "title":"i need the following information",
+            "author":"maria"
+        },
+        {
+            "id":3,
+            "title":"i was sleeping",
+            "author":"peace"
+        }
+    ],
+    "payments":[
+        {
+            "id":1,
+            "name":"kiiza phillip",
+            "amount":120000,
+            "date":"2023-6-23"
+        },
+        {
+            "id":2,
+            "name":"Bisikwa Sharon",
+            "amount":300000,
+            "date":"2023-5-20"
+        }
+        
+    ],
+    "students":[
+        {
+            "id":1,
+            "name":"kiiza phillip",
+            "class":"S.1",
+            "gender":"male"
+        },
+        {
+            "id":2,
+            "name":"Bisikwa Sharon",
+            "class":"S.2",
+            "gender":"female"
+        }
+        
+    ]
+}
